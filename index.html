@@ -2,305 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Expense Tracker</title>
+    <title>Arghyadeep | Portfolio</title>
     <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
-    .container { max-width: 400px; margin: 40px auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .header-logo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-    .logo-circle { width: 40px; height: 40px; border-radius: 50%; background: #e0e0e0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    h2 { margin-top: 0; }
-    .section { margin-bottom: 24px; }
-    input[type="number"] { width: 100px; padding: 6px; margin-right: 8px; }
-    button { padding: 6px 12px; }
-    .summary { font-size: 1.1em; margin-top: 8px; }
-    .balance { color: #007700; font-weight: bold; }
-    .warning { color: #cc0000; font-weight: bold; }
-
-    /* Responsive styles */
-    @media (max-width: 500px) {
-        .container {
-            max-width: 98vw;
-            margin: 12px auto;
-            padding: 8vw 2vw;
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6fb;
+            margin: 0;
+            padding: 0;
         }
-        .header-logo-row {
-            flex-direction: column;
-            gap: 4px;
-            align-items: flex-start;
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            padding: 32px;
+        }
+        h1 {
+            text-align: center;
+            color: #2d3a4b;
+            margin-bottom: 8px;
         }
         h2 {
-            font-size: 1.3em;
+            color: #3e4e63;
+            margin-top: 32px;
+            margin-bottom: 12px;
         }
-        .section {
-            margin-bottom: 16px;
+        .profile {
+            text-align: center;
+            margin-bottom: 24px;
         }
-        input[type="number"] {
-            width: 80vw;
-            max-width: 100%;
-            margin-bottom: 8px;
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border: 2px solid #e0e6ed;
         }
-        button {
-            width: 100%;
-            margin-bottom: 8px;
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
         }
-        .summary {
-            font-size: 1em;
+        .links a {
+            text-decoration: none;
+            color: #fff;
+            background: #3e4e63;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: background 0.2s;
         }
-        #historyContent, #guidelinesModal > div {
-            max-width: 95vw !important;
-            padding: 6vw 2vw !important;
+        .links a:hover {
+            background: #2d3a4b;
         }
-    }
+        .about, .projects, .contact {
+            margin-bottom: 24px;
+        }
+        ul {
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header-logo-row">
-            <h2 style="margin-bottom:0;">Daily Budget Tracker</h2>
-            <div class="logo-circle" id="logoCircle">
-                <!-- You can put your logo image here -->
-                <img src="calc_logo2.png" alt="Logo" style="width:32px;height:32px;border-radius:50%;">
-            </div>
+        <div class="profile">
+            <!-- To add your own image, replace the src URL below with the path to your image file. Example: src="images/myphoto.jpg" or a direct URL. The image should be square for best results. -->
+            <img src="calc_logo2.png" alt="Arghyadeep Profile Photo">
+            <h1>Arghyadeep</h1>
+            <p>Web Developer | Learner | Tech Enthusiast</p>
         </div>
-        <!-- Available Balance Section -->
-        <div class="section">
-            <h3>Available Balance</h3>
-            <input type="number" id="addBalanceInput" placeholder="Add Amount (Rs)">
-            <button onclick="addBalance()">Add to Balance</button>
-            <div class="summary balance">Balance: Rs <span id="balance">0</span></div>
+        <div class="links">
+            <a href="https://github.com/arghya29" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/arghyadeep-bag-077170326" target="_blank">LinkedIn</a>
         </div>
-        <!-- Daily Expense Section -->
-        <div class="section">
-            <h3>Add Today's Expense <span id="dayLabel">(Day 1)</span></h3>
-            <input type="number" id="dailyExpenseInput" placeholder="Amount (Rs)">
-            <button onclick="addDailyExpense()">Add</button>
-            <button onclick="dayOver()">Day Over</button>
-            <div class="summary">Today's Total: Rs <span id="dailyTotal">0</span></div>
+        <div class="about">
+            <h2>About Me</h2>
+            <p>
+                Hi! I'm Arghyadeep, I wish to be a data scientist. I am passionate about matchine learning and learning new technologies.
+                I enjoy solving problems and collaborating on exciting projects.
+            </p>
         </div>
-        <!-- Monthly Expense Section -->
-        <div class="section">
-            <h3>Monthly Expense <span id="monthLabel">(Month 1)</span></h3>
-            <div class="summary">This Month: Rs <span id="monthlyTotal">0</span></div>
-            <button onclick="monthOver()">Month Over</button>
+        <div class="projects">
+            <h2>Projects</h2>
+            <ul>
+                    <li><strong>Portfolio Website:</strong> Personal website showcasing my work and skills.</li>
+                    <li><strong>Daily Budget Calculator Website:</strong> Website to track and manage expenses and expenses efficiently — <a href="https://arghya29.github.io/daily-budget-calculator/" target="_blank">link</a></li>
+                    <li><strong>Wind Turbine Power Output Prediction:</strong> Predictive model for estimating wind turbine power output — <a href="https://github.com/arghya29/Wind-Turbine-Power-Output-Prediction.git" target="_blank">link</a></li>
+            </ul>
         </div>
-        <!-- Monthly Allowance Section -->
-        <div class="section">
-            <h3>Monthly Allowance Left</h3>
-            <div class="summary">
-                Allowed: Rs <span id="allowanceValue">3000</span>
-                <button id="showChangeBtn" onclick="showChangeAllowanceInput()">Change</button>
-                <span id="changeAllowanceContainer" style="display:none;">
-                    <input type="number" id="changeAllowanceInput" placeholder="New amount" style="width:80px; margin-left:8px;">
-                    <button onclick="changeAllowance()">OK</button>
-                </span>
-            </div>
-            <div class="summary warning">Remaining: Rs <span id="allowanceLeft">3000</span></div>
-        </div>
-        <!-- History and Guidelines Buttons -->
-        <div style="text-align:center; margin-top:32px;">
-            <button onclick="showDailyHistory()">Daily Transaction History</button>
-            <button onclick="showMonthlyHistory()">Monthly Expenses</button>
-            <button onclick="showGuidelines()" style="margin-top:12px;">How to Use</button>
-        </div>
-        <!-- Modals for history -->
-        <div id="historyModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3); z-index:1000;">
-            <div id="historyContent" style="background:#fff; max-width:350px; margin:60px auto; padding:24px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2); position:relative;">
-                <button onclick="closeHistory()" style="position:absolute; top:8px; right:8px;">Close</button>
-                <div id="historyBody"></div>
-            </div>
-        </div>
-        <!-- Modal for guidelines -->
-        <div id="guidelinesModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3); z-index:1000;">
-            <div style="background:#fff; max-width:400px; margin:60px auto; padding:24px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2); position:relative;">
-                <button onclick="closeGuidelines()" style="position:absolute; top:8px; right:8px;">Close</button>
-                <h3>How to Use the Budget Calculator</h3>
-                <ul style="padding-left:18px;">
-                    <li><b>Add to Balance:</b> Enter an amount and click "Add to Balance" to increase your available funds.</li>
-                    <li><b>Add Today's Expense:</b> Enter your daily expense and click "Add". This will decrease your balance and add to your daily/monthly totals.</li>
-                    <li><b>Day Over:</b> Click this at the end of each day to move to the next day. Your daily expenses will reset for the new day.</li>
-                    <li><b>Month Over:</b> Click this at the end of each month to move to the next month. Your monthly allowance resets and day count starts over.</li>
-                    <li><b>Change Allowance:</b> Click "Change" next to the allowance to set a new monthly allowance.</li>
-                    <li><b>History:</b> Use the history buttons to view your daily transactions and monthly expenses.</li>
-                    <li><b>Data Saving:</b> All your changes are saved automatically in your browser. You can close and return later without losing your data.</li>
-                </ul>
-                <p style="margin-top:12px; font-size:0.95em; color:#555;">This calculator helps you track your spending and manage your budget easily. If you need to reset everything, clear your browser's site data for this page.</p>
-            </div>
-        </div>
-    </div>
-    <script>
-        // Show input to change allowance
-        function showChangeAllowanceInput() {
-            document.getElementById('changeAllowanceContainer').style.display = '';
-            document.getElementById('showChangeBtn').style.display = 'none';
-        }
-        // Load from localStorage
-        function loadData() {
-            const data = localStorage.getItem('expenseTrackerData');
-            if (data) {
-                try {
-                    const obj = JSON.parse(data);
-                    day = obj.day || 1;
-                    month = obj.month || 1;
-                    dailyExpenses = obj.dailyExpenses || [];
-                    monthlyExpenses = obj.monthlyExpenses || [];
-                    balance = obj.balance || 0;
-                    monthlyAllowance = obj.monthlyAllowance || 3000;
-                } catch (e) {
-                    // If parsing fails, use defaults
-                }
-            }
-        }
-        // Save to localStorage
-        function saveData() {
-            const obj = {
-                day,
-                month,
-                dailyExpenses,
-                monthlyExpenses,
-                balance,
-                monthlyAllowance
-            };
-            localStorage.setItem('expenseTrackerData', JSON.stringify(obj));
-        }
-        // Data storage
-        let day = 1;
-        let month = 1;
-        let dailyExpenses = [];
-        let monthlyExpenses = [];
-        let balance = 0;
-        let monthlyAllowance = 3000;
-        loadData();
-        // Add daily expense
-        function addDailyExpense() {
-            const input = document.getElementById('dailyExpenseInput');
-            const amount = parseFloat(input.value);
-            if (!amount || amount <= 0) return;
-            dailyExpenses.push({ day, amount });
-            monthlyExpenses.push({ month, amount });
-            balance -= amount;
-            input.value = '';
-            updateUI();
-            saveData();
-        }
-
-        // Change monthly allowance
-        function changeAllowance() {
-            const input = document.getElementById('changeAllowanceInput');
-            const value = parseFloat(input.value);
-            if (!value || value <= 0) return;
-            monthlyAllowance = value;
-            input.value = '';
-            document.getElementById('changeAllowanceContainer').style.display = 'none';
-            document.getElementById('showChangeBtn').style.display = '';
-            updateUI();
-            saveData();
-        }
-        // Add to balance
-        function addBalance() {
-            const input = document.getElementById('addBalanceInput');
-            const amount = parseFloat(input.value);
-            if (!amount || amount <= 0) return;
-            balance += amount;
-            input.value = '';
-            updateUI();
-            saveData();
-        }
-        // Day over: increment day
-        function dayOver() {
-            day++;
-            updateUI();
-            saveData();
-        }
-        // Month over: increment month, reset allowance, reset day
-        function monthOver() {
-            month++;
-            day = 1;
-            monthlyAllowance = 3000;
-            updateUI();
-            saveData();
-        }
-        // Calculate today's total
-        function getDailyTotal() {
-            return dailyExpenses.filter(e => e.day === day).reduce((sum, e) => sum + e.amount, 0);
-        }
-        // Calculate monthly total
-        function getMonthlyTotal() {
-            return monthlyExpenses.filter(e => e.month === month).reduce((sum, e) => sum + e.amount, 0);
-        }
-        // Update UI
-        function updateUI() {
-            document.getElementById('dayLabel').textContent = `(Day ${day})`;
-            document.getElementById('monthLabel').textContent = `(Month ${month})`;
-            document.getElementById('dailyTotal').textContent = getDailyTotal();
-            document.getElementById('monthlyTotal').textContent = getMonthlyTotal();
-            document.getElementById('balance').textContent = balance;
-            document.getElementById('allowanceValue').textContent = monthlyAllowance;
-            const allowanceLeft = monthlyAllowance - getMonthlyTotal();
-            document.getElementById('allowanceLeft').textContent = allowanceLeft >= 0 ? allowanceLeft : 0;
-        }
-        // Initial UI
-    updateUI();
-
-        // Show daily transaction history
-        function showDailyHistory() {
-            let html = '<h3>Daily Transaction History</h3>';
-            if (dailyExpenses.length === 0) {
-                html += '<p>No transactions yet.</p>';
-            } else {
-                html += '<table style="width:100%; border-collapse:collapse;">';
-                html += '<tr><th>Amount (Rs)</th><th>Day</th><th>Month</th></tr>';
-                dailyExpenses.forEach((e, idx) => {
-                    // Find the corresponding month for this daily expense
-                    // Each daily expense is added together with a monthly expense, so use the same index
-                    const monthVal = monthlyExpenses[idx] ? monthlyExpenses[idx].month : month;
-                    html += `<tr><td style='text-align:center;'>${e.amount}</td><td style='text-align:center;'>${e.day}</td><td style='text-align:center;'>${getMonthLabel(monthVal)}</td></tr>`;
-                });
-                html += '</table>';
-            }
-            showHistoryModal(html);
-        }
-
-        // Show monthly expenses history
-        function showMonthlyHistory() {
-            let html = '<h3>Monthly Expenses</h3>';
-            if (monthlyExpenses.length === 0) {
-                html += '<p>No expenses yet.</p>';
-            } else {
-                // Group by month
-                let monthTotals = {};
-                monthlyExpenses.forEach(e => {
-                    monthTotals[e.month] = (monthTotals[e.month] || 0) + e.amount;
-                });
-                html += '<table style="width:100%; border-collapse:collapse;">';
-                html += '<tr><th>Month</th><th>Total (Rs)</th></tr>';
-                Object.keys(monthTotals).sort((a,b)=>a-b).forEach(m => {
-                    html += `<tr><td style='text-align:center;'>${getMonthLabel(Number(m))}</td><td style='text-align:center;'>${monthTotals[m]}</td></tr>`;
-                });
-                html += '</table>';
-            }
-            showHistoryModal(html);
-        }
-
-        // Helper to show modal
-        function showHistoryModal(html) {
-            document.getElementById('historyBody').innerHTML = html;
-            document.getElementById('historyModal').style.display = 'block';
-        }
-        function closeHistory() {
-            document.getElementById('historyModal').style.display = 'none';
-        }
-        // Show guidelines modal
-        function showGuidelines() {
-            document.getElementById('guidelinesModal').style.display = 'block';
-        }
-        function closeGuidelines() {
-            document.getElementById('guidelinesModal').style.display = 'none';
-        }
-        // Helper to show month as 'Month 1', 'Month 2', etc.
-        function getMonthLabel(m) {
-            return `Month ${m}`;
-        }
-    </script>
-</body>
-</html>
+        <div class="contact">
+            <h2>Contact</h2>
+            <p>
+                Feel free to connect on <a href="https://www.linkedin.com/in/arghyadeep-bag-077170326" target="_blank">LinkedIn</a>.
+            </p>
